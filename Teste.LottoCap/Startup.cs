@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Teste.LottoCap
 {
     /// <summary>
-    /// Classe de start da api  
+    /// Classe de start da api
     /// </summary>
     public class Startup
     {

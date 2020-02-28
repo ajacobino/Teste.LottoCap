@@ -10,4 +10,8 @@ Esta Utilizando Swagger no projeto exemplo http://localhost/swagger
 
 O Mesmo contém o arquivo para configuração no Docker também, porém é necessário modificar o as Propriedades do projeto para executar no containêr, esta utilizando IIS Express para testes
 
-Espero ter entrado bem o que ram para os contadores de caracteres acima de incidentes nas strings passadas, a mesma é retirada de caracteres especiais
+Espero ter entendido bem o que foi proposto mas de qualquer forma é contado a incidência dos caracteres acima.
+
+A Classe de retorno caso ocorra algum erro vira com a propriedade de erro preenchida.
+
+O arquivo .Docx contém as informações de como testar a api de três formas: Propria aplicação de Teste (Teste.LottoCap.Test), Postman, Swagger.
