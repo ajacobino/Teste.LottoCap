@@ -8,4 +8,6 @@ WebApi para linux com dois parâmetros de entrada para contagem de incidências do
 
 Esta Utilizando Swagger no projeto exemplo http://localhost/swagger
 
+O Mesmo contém o arquivo para configuração no Docker também, porém é necessário modificar o as Propriedades do projeto para executar no containêr, esta utilizando IIS Express para testes
+
 Espero ter entrado bem o que ram para os contadores de caracteres acima de incidentes nas strings passadas, a mesma é retirada de caracteres especiais
