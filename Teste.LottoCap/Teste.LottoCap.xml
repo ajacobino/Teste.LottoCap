@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Teste.LottoCap</name>
+    </assembly>
+    <members>
+        <member name="T:Teste.LottoCap.Controllers.InputStringController">
+            <summary>
+            Controller principal de recebimento de strings
+            </summary>
+        </member>
+        <member name="M:Teste.LottoCap.Controllers.InputStringController.Post(Teste.LottoCap.Entrada.EntradaString)">
+            <summary>
+            Controller para entrada de dados 
+            </summary>
+            <param name="entrada">Classe que repesenta as strings de entrada de dados</param>
+            <returns>Retorna um array em json com os resultados de incidencias ou erro caso ocorram</returns>
+        </member>
+        <member name="T:Teste.LottoCap.Entrada.EntradaString">
+            <summary>
+            Classe de entrada de dados
+            </summary>
+        </member>
+        <member name="P:Teste.LottoCap.Entrada.EntradaString.Entrada1">
+            <summary>
+            Propriedade que recebe o primeiro valor
+            </summary>
+        </member>
+        <member name="P:Teste.LottoCap.Entrada.EntradaString.Entrada2">
+            <summary>
+            Propriedade que recebe o segundo valor
+            </summary>
+        </member>
+        <member name="T:Teste.LottoCap.Program">
+            <summary>
+            Classe inicial
+            </summary>
+        </member>
+        <member name="M:Teste.LottoCap.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Teste.LottoCap.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Teste.LottoCap.Saida.Erros">
+            <summary>
+            Classe que é responsavel caso ocorra algum tipo de erro
+            </summary>
+        </member>
+        <member name="P:Teste.LottoCap.Saida.Erros.Mensagem">
+            <summary>
+            Propriedade com a mensagem de erro
+            </summary>
+        </member>
+        <member name="P:Teste.LottoCap.Saida.Erros.StackTrace">
+            <summary>
+            Propriedade com o trace de erro
+            </summary>
+        </member>
+        <member name="T:Teste.LottoCap.Saida.RetornoClasse">
+            <summary>
+            Classe que retorna os dados e erros caso ocorram
+            </summary>
+        </member>
+        <member name="P:Teste.LottoCap.Saida.RetornoClasse.Mensagem">
+            <summary>
+            Propriedade com a mensagem
+            </summary>
+        </member>
+        <member name="P:Teste.LottoCap.Saida.RetornoClasse.Quantidade">
+            <summary>
+            Propriedade com a quantidade de incidencias das letras
+            </summary>
+        </member>
+        <member name="P:Teste.LottoCap.Saida.RetornoClasse.Erro">
+            <summary>
+            Propriedade caso ocorra algum erro
+            </summary>
+        </member>
+        <member name="T:Teste.LottoCap.Startup">
+            <summary>
+            Classe de start da api  
+            </summary>
+        </member>
+        <member name="M:Teste.LottoCap.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Método de inicializacao da classe
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Teste.LottoCap.Startup.Configuration">
+            <summary>
+            Propriedade de retorno das configuracoes
+            </summary>
+        </member>
+        <member name="M:Teste.LottoCap.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Método de configuracao
+            </summary>
+            <param name="services">Servicos a serem utilizados</param>
+        </member>
+        <member name="M:Teste.LottoCap.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:Teste.LottoCap.Util.Utils">
+            <summary>
+            Classe interna de apoio com utilidades
+            </summary>
+        </member>
+        <member name="M:Teste.LottoCap.Util.Utils.RemoverAcentuacao(System.String)">
+            <summary>
+            Método para reover acencução e caracteres especiais usando linq
+            </summary>
+            <param name="text">Texto a ser transformado</param>
+            <returns>Retorna a string sem os caracteres especiais</returns>
+        </member>
+        <member name="M:Teste.LottoCap.Util.Utils.CriarRetorno(System.String,System.Int32)">
+            <summary>
+            Método para criar retorno comum da controller
+            </summary>
+            <param name="Mensagem">Mensagem a ser retornada em caso de sucesso</param>
+            <param name="Quantidade">Quantidade de incidencias de palavras</param>
+            <returns>Retorna a classe preenchida pronta para retorno</returns>
+        </member>
+        <member name="M:Teste.LottoCap.Util.Utils.CriarRetorno(System.String,System.String)">
+            <summary>
+            Método para criar retorno comum da controller
+            </summary>
+            <param name="Mensagem">Mensagem a ser retornada em caso de erro</param>
+            <param name="Trace">Caso ocorra um erro sera enviado o trace</param>
+            <returns>Retorna a classe preenchida pronta para retorno</returns>
+        </member>
+    </members>
+</doc>
