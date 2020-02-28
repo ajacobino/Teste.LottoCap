@@ -52,7 +52,7 @@ namespace Teste.LottoCap
 
                 });
 
-                string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.XML";
+                string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 
                 //inclui a documentação gerada 
