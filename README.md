@@ -12,6 +12,6 @@ O Mesmo contém o arquivo para configuração no Docker também, porém é necessário 
 
 Espero ter entendido bem o que foi proposto mas de qualquer forma é contado a incidência dos caracteres acima.
 
-A Classe de retorno caso ocorra algum erro retornara com a propriedade de erro preenchida.
+A Classe de retorno caso ocorra algum erro retornara com a propriedade de erro preenchida. 
 
 O arquivo .Docx contém as informações de como testar a api de três formas: Propria aplicação de Teste (Teste.LottoCap.Test), Postman, Swagger.
