@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Teste.LottoCap.CrossCutting\Teste.LottoCap.CrossCutting.csproj" />
+    <ProjectReference Include="..\Teste.LottoCap.Domain\Teste.LottoCap.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

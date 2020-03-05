@@ -1,10 +1,9 @@
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Teste.LottoCap.Entrada;
-using Teste.LottoCap.Saida;
+using Teste.LottoCap.Domain.Entities;
 using Xunit;
 
 namespace Teste.LottoCap.Test
@@ -15,34 +14,85 @@ namespace Teste.LottoCap.Test
     public class TesteDeMetodo
     {
         /// <summary>
-        /// Método que testa que retorno algum tipo de erro na primeira propriedade de retorno da api
+        /// Método para teste de Urso para Pato
         /// </summary>
         /// <returns></returns>
         [Fact]
-        public async Task InputString_Result_NotNull()
+        public async Task Urso_Pato()
         {
             //Cria o web server
             using (var client = new TestClientProvider().Client)
             {
                 //Cria a chamada para a api passando os dados
-                HttpResponseMessage response = await client.PostAsync("/api/InputString"
+                HttpResponseMessage response = await client.PostAsync("/api/ModValor"
                 , new StringContent(
-                JsonConvert.SerializeObject(new EntradaString()
+                JsonConvert.SerializeObject(new Valores()
                 {
-                    Entrada1 = "Alexandre testando",
-                    Entrada2 = "Teste de aplicação"
+                    De = "Urso",
+                    Para = "Pato"
                 }),
                 Encoding.UTF8, "application/json"));
 
                 //Pega o retorno da chamada
-                List<RetornoClasse> DadosRetornados = response.Content.ReadAsAsync<List<RetornoClasse>>().Result;
-                Assert.Null(DadosRetornados[0].Erro);
-
-                //poderia ser verificado pelo status code do retorno
-                //response.EnsureSuccessStatusCode();
-                //Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+                Valores DadosRetornados = response.Content.ReadAsAsync<Valores>().Result;
+                Assert.Equal(3,DadosRetornados.Quantidade);
 
 
+            }
+
+        }
+
+        /// <summary>
+        /// Método para teste de Pato para Rato
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task Pato_Rato()
+        {
+            //Cria o web server
+            using (var client = new TestClientProvider().Client)
+            {
+                //Cria a chamada para a api passando os dados
+                HttpResponseMessage response = await client.PostAsync("/api/ModValor"
+                , new StringContent(
+                JsonConvert.SerializeObject(new Valores()
+                {
+                    De = "Urso",
+                    Para = "Pato"
+                }),
+                Encoding.UTF8, "application/json"));
+
+                //Pega o retorno da chamada
+                Valores DadosRetornados = response.Content.ReadAsAsync<Valores>().Result;
+                Assert.Equal(3, DadosRetornados.Quantidade);
+
+
+            }
+
+        }
+        /// <summary>
+        /// Método para teste de Cavalo para Rato
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task Cavalo_Pato()
+        {
+            //Cria o web server
+            using (var client = new TestClientProvider().Client)
+            {
+                //Cria a chamada para a api passando os dados
+                HttpResponseMessage response = await client.PostAsync("/api/ModValor"
+                , new StringContent(
+                JsonConvert.SerializeObject(new Valores()
+                {
+                    De = "Cavalo",
+                    Para = "Pato"
+                }),
+                Encoding.UTF8, "application/json"));
+
+                //Pega o retorno da chamada
+                Valores DadosRetornados = response.Content.ReadAsAsync<Valores>().Result;
+                Assert.Equal(4, DadosRetornados.Quantidade);
 
 
             }

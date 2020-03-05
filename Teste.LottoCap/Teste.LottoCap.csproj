@@ -8,6 +8,7 @@
     <Copyright>Alexandre Arruda Jacobino</Copyright>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
+    <DockerComposeProjectPath>docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -24,6 +25,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Teste.LottoCap.Domain\Teste.LottoCap.Domain.csproj" />
+    <ProjectReference Include="..\Teste.LottoCap.Service\Teste.LottoCap.Service.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,13 +6,10 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.1-stretch AS build
 WORKDIR /src
-COPY ["Teste.LottoCap.csproj", "./"]
-COPY ["../Teste.LottoCap.Service/Teste.LottoCap.Service.csproj", "../Teste.LottoCap.Service/"]
-COPY ["../Teste.LottoCap.CrossCutting/Teste.LottoCap.CrossCutting.csproj", "../Teste.LottoCap.CrossCutting/"]
-COPY ["../Teste.LottoCap.Domain/Teste.LottoCap.Domain.csproj", "../Teste.LottoCap.Domain/"]
-RUN dotnet restore "Teste.LottoCap.csproj"
+COPY ["Teste.LottoCap.csproj", ""]
+RUN dotnet restore "./Teste.LottoCap.csproj"
 COPY . .
-WORKDIR "/src/"
+WORKDIR "/src/."
 RUN dotnet build "Teste.LottoCap.csproj" -c Release -o /app/build
 
 FROM build AS publish

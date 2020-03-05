@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  teste.lottocap:
+    image: ${DOCKER_REGISTRY-}testelottocap
+    build:
+      context: .
+      dockerfile: Dockerfile
